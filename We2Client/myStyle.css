@@ -1,0 +1,50 @@
+﻿.top-text {
+    text-align: center;
+    color:white;
+    background-color:lightgray;
+}
+
+.top-text a{
+    text-decoration:none;
+    color:white;
+}
+.text{
+    text-align:center;
+}
+
+.text a{
+    height:50px;
+    font-size: 20px;
+}
+
+.test{
+    float: left;
+    color: rebeccapurple;
+}
+
+.back a{
+    background-color:lightgray;
+    height: 100px;
+    
+}
+
+.install-btn a{
+    height: 70px;
+    width: 200px;
+    text-align:center;
+    font-size:35px;
+}
+
+.install-btn{
+    text-align:center;
+}
+
+.btn-back{
+    float:left;
+}
+
+.main-btns 
+
+form{
+    text-align: center;
+}
