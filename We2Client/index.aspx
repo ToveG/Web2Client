@@ -26,6 +26,7 @@
                 <h3>Redan installerat?</h3> 
                 <h3>Klicka på knappen för att börja använda programmet.</h3>
                 <br />
+                <%--   <a href="Client2Web:06" class="btn btn-info" role="button">Gå till programmet</a>--%>
                 <a href="http://localhost/Web2Client/commandClient.aspx" class="btn btn-info" role="button">Gå till programmet</a>
             </div>
             </div>

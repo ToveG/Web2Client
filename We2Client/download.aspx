@@ -7,8 +7,10 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="Content\bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="myStyle.css" />
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 </head>
 <body>
+
     <div class="container-fluid">
         <div class="jumbotron top-text">
             <h1>Web2Client</h1>
@@ -33,5 +35,14 @@
 
         </div>
     </div>
+        <script type="text/javascript" src="scripts/myScript.js">
+
+</script>
+<%--  <script type="text/javascript" src="~/Scripts/JavaScript.js"></script>--%>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
 </html>
