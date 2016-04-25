@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="Content\bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="myStyle.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
 </head>
 <body>
 
@@ -15,24 +16,49 @@
         <div class="jumbotron top-text">
             <h1>Web2Client</h1>
         </div>
+
+        
+<div class="container">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <div class="row">
-            <div class="col-md-12">
-                <p>Det verkar som att du inte har programmet installerat på din dator. </p>
+            <div class="col-md-12 text">
+                <h4>Det verkar som att du inte har programmet installerat på din dator. </h4>
+                <h4>Vänligen klicka nedan för att installera.<br /></h4>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
                 <form id="form1">
                     <div class="install-btn">
-                        <a href="http://localhost/Deploy/setup.exe" class="btn btn-info" role="button">Installera</a>
+                        <a href="Deploy\Client2WebInstaller.application" class="btn btn-info" role="button">Installera</a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="scripts/myScript.js">
+          <script type="text/javascript" src="myScript.js"></script>
 
-    </script>
+
     <%--  <script type="text/javascript" src="~/Scripts/JavaScript.js"></script>--%>
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>

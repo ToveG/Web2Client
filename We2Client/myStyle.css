@@ -12,6 +12,10 @@
     text-align:center;
 }
 
+#myModal a{
+    text-align: center;
+}
+
 .text a{
     height:50px;
     font-size: 20px;
