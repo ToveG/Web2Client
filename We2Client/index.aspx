@@ -30,10 +30,10 @@
                         </div>
                         <div class="modal-body">
                             <p>Det verkar som att programmet inte är installerat på din dator, vänligen klicka nedan för att installera applikationen. </p>
-                            <a href="Deploy\Client2WebInstaller.application">--> Installera nu!</a>
+                            <a href="Deploy\Client2WebInstaller.application">--> INSTALLERA NU!</a>
                         </div>
                         <div class="modal-footer">
-                            <input type="button" onclick="close_and_redirect()" class="btn btn-info" id="close-btn" value="till programmet..." />
+                            <input type="button" onclick="close_and_redirect()" class="btn btn-info btn-go" id="close-btn" value="Klart! Ta mig till programmet..." />
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                 <div class="col-md-6">
                     <h3>Redan installerat?</h3>
                     <br />
-
+                    
                     <input type="button" onclick="checkAppStatus()" class="btn btn-info" id="my_btn" value="Gå till programmet..." />
 
                 </div>

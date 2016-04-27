@@ -11,6 +11,20 @@
 .text{
     text-align:center;
 }
+.btn-go{
+    font-size:12px;
+}
+
+.modal-body{
+     font-weight: bold;
+    text-align:center;
+
+  }
+p{
+    font-weight: lighter;
+    text-align:left;
+}
+
 
 #myModal a{
     text-align: center;

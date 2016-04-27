@@ -10,8 +10,9 @@ var modal = document.getElementById("myModal");
             contentType: "application/x-www-form-urlencoded",
             type: "POST",
             data: '',
-            error: function (data) {
+            error: function (data, status, err) {
                 console.log("error: " + data);
+                alert("Failed!!");
                 //redirectToInstall();
                 //showModal(modal);
 
