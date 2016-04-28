@@ -1,4 +1,8 @@
-﻿.top-text {
+﻿#my_btn{
+   font-size: 20px;
+}
+
+.top-text {
     text-align: center;
     color:white;
     background-color:lightgray;
@@ -65,4 +69,8 @@ p{
 
 form{
     text-align: center;
+}
+
+.to-start{
+    margin-top: 200px;
 }

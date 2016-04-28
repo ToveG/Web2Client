@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    <div class="container-fluid">
+    <div class="container">
         <div class="jumbotron top-text">
             <h1>Web2Client</h1>
         </div>
@@ -27,7 +27,7 @@
                     </div>
                 </form>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 to-start">
                   <form id="form2">
                     <div class="btn-back">
                         <a href="commandClient.aspx" class="btn btn-info" role="button">Till programmet...</a>

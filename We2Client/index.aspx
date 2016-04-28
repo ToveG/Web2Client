@@ -12,7 +12,7 @@
 
 <body>
     <form id="form1" runat="server">
-        <div class="container-fluid">
+        <div class="container">
             <div class="jumbotron top-text">
                 <h2>Välkommen till</h2>
                 <h1>Web2Client</h1>
@@ -47,10 +47,10 @@
                     <a href="download.aspx" class="btn btn-info" role="button">Installera</a>
                 </div>
                 <div class="col-md-6">
-                    <h3>Redan installerat?</h3>
+                    <h3>Redan installerat?<br /> Klicka nedan för att komma till programmet. </h3>
                     <br />
                     
-                    <input type="button" onclick="checkAppStatus()" class="btn btn-info" id="my_btn" value="Gå till programmet..." />
+                    <input type="button" onclick="checkAppStatus()" class="btn btn-info" id="my_btn" value="Start" />
 
                 </div>
             </div>

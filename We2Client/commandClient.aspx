@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="myStyle.css" />
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container">
         <div class="jumbotron top-text">
             <a href="index.aspx"><h1>Web2Client</h1></a>
                 
@@ -28,11 +28,10 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12 return-btn">
+            <div class="col-md-12 to-start">
                        <form id="form1 ">
-                    <a href="index.aspx" class="btn btn-info" role="button">Till startsidan</a>
-
-                    <a href="download.aspx" class="btn btn-info" role="button">Installera</a>
+                    <a href="index.aspx" class="btn btn-info" role="button">...tillbaka</a>
+                                             
                 </form>
             </div>
         </div>
