@@ -112,13 +112,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Content Include="w2cService.asmx" />
-    <Content Include="Web References\w2c_service\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
-    <None Include="Web References\w2c_service\w2cService.disco" />
     <Content Include="Web2Client.aspx" />
-    <None Include="Web References\w2c_service\w2cService.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -167,11 +161,6 @@
       <DependentUpon>w2cService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Web References\w2c_service\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
     <Compile Include="Web2Client.aspx.cs">
       <DependentUpon>Web2Client.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -189,19 +178,6 @@
   </ItemGroup>
   <ItemGroup>
     <WebReferences Include="Web References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WebReferenceUrl Include="http://localhost/w2cService/w2cService.asmx">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\w2c_service\</RelPath>
-      <UpdateFromURL>http://localhost/w2cService/w2cService.asmx</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>We2Client_w2c_service_w2cService</CachedSettingsPropName>
-    </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

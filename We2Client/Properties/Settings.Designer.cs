@@ -22,15 +22,5 @@ namespace We2Client.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/w2cService/w2cService.asmx")]
-        public string We2Client_w2c_service_w2cService {
-            get {
-                return ((string)(this["We2Client_w2c_service_w2cService"]));
-            }
-        }
     }
 }

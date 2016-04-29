@@ -21,40 +21,39 @@ namespace We2Client
         private string ConnectionString = "server=WIN-14IEVFR7PQB\\;Database=client2webDB;Trusted_Connection=True;";
 
         [WebMethod]
-        ////Save comment in CommentB;
-        public void AddWord(string word)
+        public void setUserId(string id)
         {
-
             SqlConnection sqlConnection = new SqlConnection(ConnectionString);
-            SqlCommand sqlCommand = new SqlCommand();
-            sqlCommand.Connection = sqlConnection;
+            SqlCommand command = new SqlCommand();
+            command.Connection = sqlConnection;
 
-            sqlCommand.CommandText = "INSERT INTO  Words (word_value)" + "VALUES(@word_)";
-
-            sqlCommand.Parameters.AddWithValue("@word_", word);
-            sqlCommand.Connection.Open();
-            sqlCommand.ExecuteNonQuery();
-            sqlCommand.Connection.Close();
+            command.CommandText = "INSERT INTO ClientIdentification (user_id)" + "VALUES(@id_)";
+            command.Parameters.AddWithValue("@id_", id);
+            command.Connection.Open();
+            command.ExecuteNonQuery();
+            command.Connection.Close();
         }
 
+
+
         [WebMethod]
-        public bool getValue()
+        public bool getValue(string id)
         {
-
             SqlConnection sqlConnection = new SqlConnection(ConnectionString);
-
+            
             var retur_value = "";
-            var cmd = new SqlCommand("select word_value from Words where word_value = 'true'; ", sqlConnection) { CommandType = CommandType.Text };
+           var appId = id + "&";
+            var cmd = new SqlCommand("select user_id from ClientIdentification where user_id = @ID ; ", sqlConnection) { CommandType = CommandType.Text };
+            // cmd.Parameters["@ID"].Value = id;
+            cmd.Parameters.AddWithValue("@ID", id);
+
             sqlConnection.Open();
             using (var rdr = cmd.ExecuteReader())
             {
                 while (rdr.Read())
                 {
-                    retur_value = rdr["word_value"].ToString();
-                
-               
+                    retur_value = rdr["user_id"].ToString();
                 }
-              
             }
             if (string.IsNullOrEmpty(retur_value))
             {
@@ -63,4 +62,5 @@ namespace We2Client
             else { return true; }
         }
     }
-}
+    }
+
