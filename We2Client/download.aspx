@@ -38,7 +38,7 @@
 
         </div>
     </div>
-<script type="text/javascript" src="myScript.js"></script>
+<%--<script type="text/javascript" src="myScript.js"></script>--%>
   <%--   //   <script type="text/javascript" src="scripts/myScript.js"></script>--%>
 <%--  <script type="text/javascript" src="~/Scripts/JavaScript.js"></script>--%>
 <!-- jQuery library -->

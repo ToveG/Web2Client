@@ -7,7 +7,9 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="Content\bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="myStyle.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  
+   
+
 </head>
 
 <body>
@@ -50,17 +52,17 @@
                     <h3>Redan installerat?<br /> Klicka nedan för att komma till programmet. </h3>
                     <br />
                     
-                    <input type="button" onclick="checkAppStatus()" class="btn btn-info" id="my_btn" value="Start" />
+                    <input type="button" class="btn btn-info" id="my_btn" value="Start" />
 
                 </div>
             </div>
         </div>
     </form>
 
-    <script type="text/javascript" src="myScript.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
     <!-- Latest compiled JavaScript -->
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="myScript.js"></script>
 </body>
 </html>

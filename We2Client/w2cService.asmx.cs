@@ -40,12 +40,12 @@ namespace We2Client
         public bool getValue(string id)
         {
             SqlConnection sqlConnection = new SqlConnection(ConnectionString);
-            
+
             var retur_value = "";
-           var appId = id + "&";
-            var cmd = new SqlCommand("select user_id from ClientIdentification where user_id = @ID ; ", sqlConnection) { CommandType = CommandType.Text };
-            // cmd.Parameters["@ID"].Value = id;
-            cmd.Parameters.AddWithValue("@ID", id);
+         
+            var cmd = new SqlCommand("select user_id from ClientIdentification where user_id = @appID ; ", sqlConnection) { CommandType = CommandType.Text };
+
+            cmd.Parameters.AddWithValue("@appID", id);
 
             sqlConnection.Open();
             using (var rdr = cmd.ExecuteReader())
@@ -58,9 +58,12 @@ namespace We2Client
             if (string.IsNullOrEmpty(retur_value))
             {
                 return false;
+               
             }
-            else { return true; }
+            else { return true; 
+            }
         }
     }
-    }
+}
+
 
