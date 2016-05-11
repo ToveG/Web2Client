@@ -1,32 +1,76 @@
 ﻿
-//$(document).ready(function () {
-var btn_app = document.getElementById("my_btn");
-var modal = document.getElementById("myModal");
-var tryGetAppId = 1;
-var startButton = document.getElementById('my_btn');
+$(document).ready(function () {
+    var btn_app = document.getElementById("my_btn");
+    var modal = document.getElementById("myModal");
+    var tryGetAppId = 1;
+    var startButton = document.getElementById('my_btn');
 
-var random_id = Math.floor(Math.random() * 100000000000000) + 100;
+    var random_id = Math.floor(Math.random() * 100000000000000) + 100;
 
-setStatus();
+    promptInstall();
+    function promptInstall() {
+        $('#startModal').modal({ show: true });
+    }
 
-function setStatus() {
-    window.location.href = "client2web:aliveId=" + random_id;
- //   console.log("skickar anropet");
-}
+    function setCookie(cname, cvalue) {
+        var d = new Date();
+        d.setTime(d.getTime() + ( 365 * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
+        var statusCookie= document.cookie = cname + "=" + cvalue + "; " + expires;
+        console.log(statusCookie);
+    }
 
-startButton.onclick = function () {
-      var runCode = setInterval(function () {
-        if (tryGetAppId <= 1) {
+
+    $('.installed').click(function () {
+        setCookie("status", "installedinne");
+        //var statusCookie = document.cookie = "status = installed";
+ 
+    });
+
+
+  
+
+
+
+
+    $('#modal-install').click(function () {
+        var statusCookie = document.cookie = "status = not installed";
+        console.log(statusCookie);
+    });
+
+
+    //$('#modal-close-btn-2').click(function () {
+    //    document.cookie = "status = installed";
+    //});
+
+
+
+    function setStatus() {
+        try {
+            window.location.assign("client2web:aliveId=" + random_id);
+        }
+        catch (err) {
+            showModal()
+        }
+    }
+
+    $('#my_btn').click(function () {
+        setStatus();
+    });
+
+
+    startButton.onclick = function () {
+        var runCode = setInterval(function () {
+            if (tryGetAppId <= 1) {
                 ($.ajax("/Web2Client/w2cService.asmx/getValue", {
                     contentType: "application/x-www-form-urlencoded",
                     type: "POST",
                     data: "id=" + random_id,
                     error: function (data, status, err) {
-                        alert("Failed!!");
+                        alert("Failed!! Error: " + err);
                     },
                     success: function (data) {
                         var status = (data.firstChild.textContent);
-                        console.log(status);
                         if (status == "true") {
                             redirectToApp();
                         }
@@ -39,19 +83,22 @@ startButton.onclick = function () {
                 showModal();
             }
         }, 1000);
-}
-
-
-function showModal() {
-   
-    $('#myModal').modal({show:true});
-                    
-}
-
-    function close_and_redirect() {
+    }
+//Test
+    $('#close-btn').click(function () {
         $('#myModal').modal('hide');
-         redirectToApp();
-        }
+        redirectToApp();
+    });
+
+//slut på test
+    function showModal() {
+        $('#myModal').modal({ show: true });
+    }
+
+    //function close_and_redirect() {
+    //    $('#myModal').modal('hide');
+    //    redirectToApp();
+    //}
 
     function redirectToApp() {
         window.location.href = "commandClient.aspx"
@@ -65,4 +112,4 @@ function showModal() {
         document.getElementById("myModal").style.display.none;
     }
 
-
+});

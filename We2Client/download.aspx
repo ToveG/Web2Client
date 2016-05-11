@@ -27,17 +27,22 @@
                     </div>
                 </form>
             </div>
-            <div class="col-md-12 to-start">
+            <div class="col-md-6 to-start">
                   <form id="form2">
                     <div class="btn-back">
                         <a href="commandClient.aspx" class="btn btn-info" role="button">Till programmet...</a>
+                    </div>
+                </form>
+                 <form id="form3">
+                    <div class="btn-back">
+                        <a href="index.aspx" class="btn btn-info" role="button">Tillbaka...</a>
                     </div>
                 </form>
                 
             </div>
 
         </div>
-    </div>
+<%--    </div>--%>
 <%--<script type="text/javascript" src="myScript.js"></script>--%>
   <%--   //   <script type="text/javascript" src="scripts/myScript.js"></script>--%>
 <%--  <script type="text/javascript" src="~/Scripts/JavaScript.js"></script>--%>
