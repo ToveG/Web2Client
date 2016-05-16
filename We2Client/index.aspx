@@ -35,7 +35,6 @@
                             <a href="Deploy\Client2WebInstaller.application">--> INSTALLERA NU!</a>
                         </div>
                         <div class="modal-footer">
-                            <%--<input type="button" onclick="close_and_redirect()" class="btn btn-info btn-go" id="close-btn" value="Klart! Ta mig till programmet..." />--%>
                             <input type="button" class="btn btn-info btn-go" id="close-btn" value="Klart! Ta mig till programmet..." />
                         </div>
                     </div>
@@ -47,16 +46,15 @@
 
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close installed" id="modal-close-btn-1" data-dismiss="modal">&times;</button>
+                            <button type="button" class="close" id="modal-close-btn-1" data-dismiss="modal">&times;</button>
                             <h4 class="modal-title">Installera Client2Web</h4>
                         </div>
                         <div class="modal-body">
                             <p>Det verkar som att programmet inte är installerat på din dator, vänligen klicka nedan för att installera applikationen. </p>
-                            <a href="Deploy\Client2WebInstaller.application" class="btn-back btn-info" role="button">--> INSTALLERA NU!</a><br />
-                            <input type="button" class="btn btn-info btn-go installed" id="modal-close-btn-2" value="Jag har den redan installerad. Visa inte igen." />
+                                <a href="Deploy\Client2WebInstaller.application" class="install-app">--> INSTALLERA NU!</a>
                          </div>
                         <div class="modal-footer">
-                            <%--<input type="button" onclick="close_and_redirect()" class="btn btn-info btn-go" id="close-btn" value="Klart! Ta mig till programmet..." />--%>
+                            <input type="button" class="btn btn-info btn-go" id="modal-close-btn-2" value="Nej tack." />
                         </div>
                     </div>
                 </div>

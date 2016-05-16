@@ -10,7 +10,7 @@
 namespace We2Client {
     
     
-    public partial class commandClient {
+    public partial class command {
         
         /// <summary>
         /// form1 control.
@@ -20,5 +20,14 @@ namespace We2Client {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
+        /// <summary>
+        /// myTable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTable myTable;
     }
 }

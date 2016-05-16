@@ -2,6 +2,14 @@
    font-size: 20px;
 }
 
+.xx{
+    float: right;
+    margin: 5px;
+
+}
+
+
+
 .top-text {
     text-align: center;
     color:white;
@@ -74,4 +82,17 @@ form{
 .to-start{
     margin-top: 200px;
     padding-left: 20px;
+}
+
+.action-btn{
+    float:right;
+    margin-left:10px;
+}
+
+.docForm{
+    float:left;
+}
+
+.modal-footer{
+    margin-top:100px;
 }

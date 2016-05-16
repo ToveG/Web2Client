@@ -76,6 +76,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -94,9 +98,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="command.aspx" />
     <Content Include="commandClient.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="DocumentManagementService.asmx" />
     <Content Include="download.aspx" />
     <Content Include="index.aspx" />
     <Content Include="myStyle.css" />
@@ -111,6 +117,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="scripts\secondScript.js" />
     <Content Include="w2cService.asmx" />
     <Content Include="Web2Client.aspx" />
     <None Include="Web.Debug.config">
@@ -127,12 +134,23 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="command.aspx.cs">
+      <DependentUpon>command.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="command.aspx.designer.cs">
+      <DependentUpon>command.aspx</DependentUpon>
+    </Compile>
     <Compile Include="commandClient.aspx.cs">
       <DependentUpon>commandClient.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="commandClient.aspx.designer.cs">
       <DependentUpon>commandClient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentManagementService.asmx.cs">
+      <DependentUpon>DocumentManagementService.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="download.aspx.cs">
       <DependentUpon>download.aspx</DependentUpon>

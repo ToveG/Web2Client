@@ -7,36 +7,61 @@ $(document).ready(function () {
 
     var random_id = Math.floor(Math.random() * 100000000000000) + 100;
 
-    promptInstall();
-    function promptInstall() {
-        $('#startModal').modal({ show: true });
-    }
+    checkCookie();
 
-    function setCookie(cname, cvalue) {
+
+
+
+    function setCookie(cookie_name, cookie_value) {
         var d = new Date();
         d.setTime(d.getTime() + ( 365 * 24 * 60 * 60 * 1000));
         var expires = "expires=" + d.toUTCString();
-        var statusCookie= document.cookie = cname + "=" + cvalue + "; " + expires;
+        var statusCookie= document.cookie = cookie_name + "=" + cookie_value + "; " + expires;
         console.log(statusCookie);
     }
-
-
-    $('.installed').click(function () {
-        setCookie("status", "installedinne");
-        //var statusCookie = document.cookie = "status = installed";
- 
+    
+    $('#modal-close-btn-2').click(function () {
+        $('#startModal').modal('toggle');
     });
 
-
+    $('.install-app').click(function () {
+        setCookie("installStatus", "Ok");
+        $('#startModal').modal('toggle');
+    });
   
+    function getCookie(cookie_name) {
+        var name = cookie_name + "=";
+        var split_cookie = document.cookie.split(';');
+        for (var i = 0; i < split_cookie.length; i++) {
+            var c = split_cookie[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function checkCookie() {
+        var app_status = getCookie("installStatus");
+        if (app_status == "Ok") {
+            $('#startModal').modal({ show: false });
+        } else {
+            $('#startModal').modal({ show: true });
+            }
+    }
+
+//    var cookieOk = getCookieValue("cookieOK");
+//    if (cookieOk != "") {
+//        $("#condition").css("display", "none");
+//    }
+//}
 
 
 
 
-    $('#modal-install').click(function () {
-        var statusCookie = document.cookie = "status = not installed";
-        console.log(statusCookie);
-    });
 
 
     //$('#modal-close-btn-2').click(function () {
