@@ -1,12 +1,16 @@
 ﻿
 $(document).ready(function () {
-
-
-
+    
     $('.create-btn').click(function () {
         $('#createModal').modal({ show: true });
-        console.log("jepp jepp");
+        console.log("kommer hit");
     })
+
+    //function openModal() {
+    //    $('#createModal').modal('show');
+    //}
+
+
 
   //  insertText();
 

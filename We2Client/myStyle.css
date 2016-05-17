@@ -2,13 +2,10 @@
    font-size: 20px;
 }
 
-.xx{
-    float: right;
-    margin: 5px;
 
+thead{
+    font-weight:bold;
 }
-
-
 
 .top-text {
     text-align: center;

@@ -10,6 +10,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:ScriptManager ID="clientScript" runat="server"></asp:ScriptManager>
     <div class="container">
          <div class="jumbotron top-text">
             <a href="index.aspx">
@@ -18,7 +19,9 @@
         </div>
 
            <!-- Modal -->
-        <div class="modal fade" id="createModal" role="dialog">
+
+        
+        <div class="modal fade" id="createModal" role="dialog" >
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -45,16 +48,36 @@
             </div>
         </div>
 
-        <table id="myTable" class="table" runat="server">
-            <tr>
-                <th>Dokument</th>
-                <th></th>
-                <th></th>
-            </tr>
-           
+        <table id="myTable" class="table" >
+           <asp:Repeater runat="server" id="rprDocTable">
+               <HeaderTemplate>
+                   <thead>
+                       <tr>
+                           <td>ID</td>
+                           <td>DOKUMENT</td>
+                           <td></td>
+                           <td></td>
+                       </tr>
+                   </thead>
+                    </HeaderTemplate>
+               <ItemTemplate>
+                   <tbody>
+                       <tr>
+                           <td><%# DataBinder.Eval(Container.DataItem,"id") %></td>
+                           <td><%# DataBinder.Eval(Container.DataItem,"docName") %></td>
+                        <td>
+                               <asp:Button runat="server" id="deleteBtn" CssClass="action-btn btn btn-info" text="Ta Bort"  OnClick="deleteBtn_Click" CommandArgument = '<%# Eval("docName") %>'/>
+                               <asp:Button runat="server" ID="copyBtn" CssClass="action-btn btn btn-info" Text="Kopiera" OnClick="copyBtn_Click" CommandArgument = '<%# Eval("docName") %>' />
+                       </td>
+                       </tr>
+                   </tbody>
+               </ItemTemplate>
+           </asp:Repeater>
             </table>
 
-         <button class="btn btn-info create-btn">Skapa</button>
+        <asp:Button runat="server" ID="createBtn" CssClass="action-btn btn btn-info createBtn"  Text="Skapa" />
+
+         <button class="btn btn-info create-btn" >Skapa</button>
         <a href="Client2Web:04" class="btn btn-info" role="button">Klistra in</a>
 
         
