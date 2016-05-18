@@ -10,56 +10,22 @@
 </head>
 <body>
      <form id="form1" runat="server">
-<%--    <div class="container">--%>
-<%--        <div class="jumbotron top-text">
+    <div class="container">
+        <div class="jumbotron top-text">
             <a href="index.aspx">
                 <h1>Web2Client</h1>
             </a>
+       </div>
 
-        </div>--%>
-
-
-     <%--   <!-- Modal -->
-        <div class="modal fade" id="createModal" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Skapa nytt dokument</h4>
-                    </div>
-                    <div class="modal-body">
-<%--                    <form class="docForm">--%>
-                  <%--          Filnamn:
-                            <input type="text" name="FileName" placeholder="filnamn" /><br />
-
-                            <input type="radio" name="docType" value="word" />
-                            Word<br />
-                            <input type="radio" name="docType" value="excel" />
-                            Excel<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="radio" name="docType" value="pp" />
-                            PowerPoint  --%>
-             <%--     </form>--%>
-       <%--             </div>
-                    <div class="modal-footer">
-                        <input type="submit" class="btn btn-info btn-go" value="Skapa" />
-
-                    </div>
-                </div>
-            </div>
-        </div>--%>--%>
-
-     
-      <%--      <asp:Table runat="server" ID="myTable" CssClass="table">
-                <asp:TableRow>
-                    <asp:TableHeaderCell>Dokument</asp:TableHeaderCell>
-                    <asp:TableHeaderCell></asp:TableHeaderCell>
-                    <asp:TableHeaderCell></asp:TableHeaderCell>
-                </asp:TableRow>
-        </asp:Table>--%>
+          <a href="Client2Web:01" class="btn btn-info create-btn" role="button">Skapa</a>
+          <a href="Client2Web:02" class="btn btn-info create-btn" role="button">Skapa</a>
+          <a href="Client2Web:03" class="btn btn-info create-btn" role="button">Skapa</a>
+          <a href="Client2Web:04" class="btn btn-info create-btn" role="button">Skapa</a>
+          <a href="Client2Web:05" class="btn btn-info create-btn" role="button">Skapa</a>
+g
 
         <button class="btn btn-info create-btn">Skapa</button>
-        <%--<a href="Client2Web:03" class="btn btn-info create-btn" role="button">Skapa</a>--%>
+        <a href="Client2Web:03" class="btn btn-info create-btn" role="button">Skapa</a>
         <a href="Client2Web:04" class="btn btn-info" role="button">Klistra in</a>
 
 
@@ -76,7 +42,7 @@
                 </form>
             </div>
         </div>
- <%--   </div>--%>
+<%--    </div>--%>
   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 

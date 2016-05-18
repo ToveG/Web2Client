@@ -2,7 +2,6 @@
    font-size: 20px;
 }
 
-
 thead{
     font-weight:bold;
 }
@@ -27,7 +26,7 @@ thead{
 .modal-body{
      font-weight: bold;
     text-align:center;
-
+    
   }
 p{
     font-weight: lighter;
@@ -92,4 +91,8 @@ form{
 
 .modal-footer{
     margin-top:100px;
+}
+
+.document-modal{
+   font-family:Arial, Helvetica, sans-serif;
 }

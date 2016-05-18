@@ -1,10 +1,19 @@
 ﻿
+function openCreateModal() {
+    $('#createModal').modal({ show: true });
+}
+
+
+
 $(document).ready(function () {
+
+
     
-    $('.create-btn').click(function () {
+    $('#create-btn').click(function () {
         $('#createModal').modal({ show: true });
         console.log("kommer hit");
     })
+
 
     //function openModal() {
     //    $('#createModal').modal('show');
