@@ -90,9 +90,10 @@ form{
 }
 
 .modal-footer{
-    margin-top:100px;
+    margin-top:10px;
 }
 
 .document-modal{
    font-family:Arial, Helvetica, sans-serif;
+   text-align:left;
 }

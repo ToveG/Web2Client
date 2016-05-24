@@ -7,9 +7,6 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="Content\bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="myStyle.css" />
-  
-   
-
 </head>
 
 <body>
@@ -20,11 +17,9 @@
                 <h1>Web2Client</h1>
             </div>
 
-
             <!-- Modal -->
-   <div class="modal fade" id="myModal" role="dialog">
-      <div class="modal-dialog">
-
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -41,9 +36,8 @@
                 </div>
             </div>
 
-               <div class="modal fade" id="startModal" role="dialog">
-      <div class="modal-dialog">
-
+            <div class="modal fade" id="startModal" role="dialog">
+                <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" id="modal-close-btn-1" data-dismiss="modal">&times;</button>
@@ -51,8 +45,8 @@
                         </div>
                         <div class="modal-body">
                             <p>Det verkar som att programmet inte är installerat på din dator, vänligen klicka nedan för att installera applikationen. </p>
-                                <a href="Deploy\Client2WebInstaller.application" class="install-app">--> INSTALLERA NU!</a>
-                         </div>
+                            <a href="Deploy\Client2WebInstaller.application" class="install-app">--> INSTALLERA NU!</a>
+                        </div>
                         <div class="modal-footer">
                             <input type="button" class="btn btn-info btn-go" id="modal-close-btn-2" value="Nej tack." />
                         </div>
@@ -68,11 +62,10 @@
                     <a href="download.aspx" class="btn btn-info" role="button">Installera</a>
                 </div>
                 <div class="col-md-6">
-                    <h3>Redan installerat?<br /> Klicka nedan för att komma till programmet. </h3>
+                    <h3>Redan installerat?<br />
+                        Klicka nedan för att komma till programmet. </h3>
                     <br />
-                    
                     <input type="button" class="btn btn-info" id="my_btn" value="Start" />
-
                 </div>
             </div>
         </div>

@@ -4,85 +4,45 @@ function openCreateModal() {
 }
 
 
+function setHiddenField() {
+    var newFileName, text;
+    newFileName = document.getElementById("TextBox2").value;
+    if (newFileName == " " || newFileName == null) {
+        text = "Du har inte angivit ett gilltigt filnamn. Vänligen försök igen.";
+    }
+    else {
+        text = " ";
+        var setValue = document.getElementById('hiddenElement02').value = newFileName;
+    }
+    document.getElementById("inputFeedback").innerHTML = text;
+}
+
+
+function renameDocument(data) {
+    $('#renameModal').modal({ show: true });
+}
+
+
+$("#TextBox2").change(function () {
+    setHiddenField();
+});
+
 
 $(document).ready(function () {
+    $('#myTable tbody tr input').on('click', function (e) {
+        var rowIndex = $(this).closest('td').parent()[0].sectionRowIndex;
+        var valueOfTd = $("#myTable > tbody").find("tr:eq(" + rowIndex + ")").find('td:eq(1)').text();
+        var setHiddenValue = document.getElementById('hiddenElement01').value = valueOfTd;
+
+        renameDocument();
+    });
 
 
-    
     $('#create-btn').click(function () {
         $('#createModal').modal({ show: true });
-        console.log("kommer hit");
     })
+}
 
-
-    //function openModal() {
-    //    $('#createModal').modal('show');
-    //}
-
-
-
-  //  insertText();
-
-    //function insertText() {
-    //    document.getElementById('doc1').innerHTML = "Some text to enter";
-    //}
-    //view();
-    //function view()
-    //{
-    //    CallService();
-        
-
-    //}        
-    //function CallService() {
-    //    $.ajax("/Web2Client/DocumentManagementService.asmx/View", {
-    //        contentType: "application/x-www-form-urlencoded",
-    //        type: "GET",
-    //        data: "",
-    //        dataType: "xml",
-    //        error: function (data, status, err) {
-    //            alert("Failed!! Error: " + err);
-    //        },
-    //        success: function (data) {
-    //            var status = (data.firstChild.textContent);
-    //            var users = jQuery.parseJSON(response.d);
-    //            console.log(users.length);  // The number of entries
-    //            console.log(users[0].Name); // The first user's name
-    //            console.log(users[1].Name); // The first user's name
-    //            console.log(list);
-              
-
-    //        }
-    //    });
-
-
-
-        //function CallService() {
-        //        $.ajax("/Web2Client/DocumentManagementService.asmx/View", {
-        //            contentType: "application/x-www-form-urlencoded",
-        //            type: "GET",
-        //            data: "",
-        //           dataType: "json",
-        //            error: function (data, status, err) {
-        //                alert("Failed!! Error: " + err);
-        //            },
-        //            success: function (data) {
-
-        //                console.log("success");
-
-        //            }
-        //        });
-
-        //    }            
- 
-       
-
-
-
-    }
-    
-  
-
-    
 );
 
 

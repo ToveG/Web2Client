@@ -53,22 +53,6 @@ $(document).ready(function () {
             }
     }
 
-//    var cookieOk = getCookieValue("cookieOK");
-//    if (cookieOk != "") {
-//        $("#condition").css("display", "none");
-//    }
-//}
-
-
-
-
-
-
-    //$('#modal-close-btn-2').click(function () {
-    //    document.cookie = "status = installed";
-    //});
-
-
 
     function setStatus() {
         try {
@@ -126,7 +110,7 @@ $(document).ready(function () {
     //}
 
     function redirectToApp() {
-        window.location.href = "commandClient.aspx"
+        window.location.href = "command.aspx"
     }
 
     function redirectToInstall() {

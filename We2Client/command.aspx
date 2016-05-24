@@ -9,8 +9,9 @@
     <link rel="stylesheet" type="text/css" href="myStyle.css" />
 </head>
 <body>
-
     <form id="form1" runat="server">
+        <input type="hidden" id="hiddenElement01" name="hiddenElement" runat="server" />
+        <input type="hidden" id="hiddenElement02" name="hiddenElement" runat="server" />
         <div class="container">
             <div class="jumbotron top-text">
                 <a href="index.aspx">
@@ -28,13 +29,32 @@
                         </div>
                         <div class="modal-body document-modal">
                             <h4>Välj vilken typ av dokument du vill skapa:</h4>
-                            <asp:RadioButton  ID="Word" Text="Word" Checked="True" GroupName="RadioGroup1" runat="server" /><br />
+                            <asp:RadioButton ID="Word" Text="Word" Checked="True" GroupName="RadioGroup1" runat="server" /><br />
                             <asp:RadioButton ID="PowerPoint" Text="Power Point" GroupName="RadioGroup1" runat="server" /><br />
                             <asp:RadioButton ID="Excel" runat="server" Text="Excel" GroupName="RadioGroup1" /><br />
                             Filnamn:
-                            <asp:TextBox id="tb3" runat="server" />
-                            <asp:Button Text="Skapa" CssClass="btn btn-info" OnClick="SubmitBtn_Click" runat="server"/>
+                            <asp:TextBox ID="tb3" runat="server" />
                             <div class="modal-footer">
+                                <asp:Button Text="Skapa" CssClass="btn btn-info" OnClick="SubmitBtn_Click" runat="server" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade testet" id="renameModal" role="dialog">
+                <div class="modal-dialog ">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Ändra filnamnet</h4>
+                        </div>
+                        <div class="modal-body document-modal">
+                            Nytt filnamn:
+                            <asp:TextBox ID="TextBox2" runat="server" />
+                            <p id="inputFeedback"></p>
+                            <div class="modal-footer">
+                                <asp:Button Text="Spara" CssClass="btn btn-info" OnClick="RenameFile_Click" runat="server" />
                             </div>
                         </div>
                     </div>
@@ -55,16 +75,16 @@
                         </thead>
                     </HeaderTemplate>
                     <ItemTemplate>
-                        <tbody>
-                            <tr>
-                                <td><%# DataBinder.Eval(Container.DataItem,"id") %></td>
-                                <td><%# DataBinder.Eval(Container.DataItem,"docName") %></td>
-                                <td>
-                                    <asp:Button runat="server" ID="deleteBtn" CssClass="action-btn btn btn-info" Text="Ta Bort" OnClick="deleteBtn_Click" CommandArgument='<%# Eval("docName") %>' />
-                                    <asp:Button runat="server" ID="copyBtn" CssClass="action-btn btn btn-info" Text="Kopiera" OnClick="copyBtn_Click" CommandArgument='<%# Eval("docName") %>' />
-                                </td>
-                            </tr>
-                        </tbody>
+                        <tr>
+                            <td><%# DataBinder.Eval(Container.DataItem,"id") %></td>
+                            <td><%# DataBinder.Eval(Container.DataItem,"docName") %></td>
+                            <td>
+                                <asp:Button runat="server" ID="deleteBtn" CssClass="action-btn btn btn-info" Text="Ta Bort" OnClick="deleteBtn_Click" CommandArgument='<%# Eval("docName") %>' />
+                                <asp:Button runat="server" ID="Button2" CssClass="action-btn btn btn-info" Text="Hämta dokument" CommandArgument='<%# Eval("docName") %>' />
+                                <input type="button" id="Button1" class="action-btn btn btn-info" value="Byt namn" />
+                                <asp:Button runat="server" ID="copyBtn" CssClass="action-btn btn btn-info" Text="Kopiera" OnClick="copyBtn_Click1" CommandArgument='<%# Eval("docName") %>' />
+                            </td>
+                        </tr>
                     </ItemTemplate>
                 </asp:Repeater>
             </table>
@@ -73,22 +93,16 @@
                     <asp:Button runat="server" ID="createBtn" CssClass="action-btn btn btn-info createBtn" OnClientClick="openCreateModal()" Text="Skapa" />
                 </ContentTemplate>
             </asp:UpdatePanel>
-            <a href="Client2Web:04" class="btn btn-info" role="button">Klistra in</a>
             <div class="row">
                 <div class="col-md-12 to-start">
                     <a href="index.aspx" class="btn btn-info" role="button">...tillbaka</a>
                 </div>
             </div>
         </div>
-        
     </form>
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-
     <!-- Latest compiled JavaScript -->
     <script src="scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="scripts/secondScript.js"></script>
-
 </body>
 </html>
