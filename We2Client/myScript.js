@@ -1,16 +1,12 @@
-﻿
-$(document).ready(function () {
+﻿$(document).ready(function () {
     var btn_app = document.getElementById("my_btn");
     var modal = document.getElementById("myModal");
     var tryGetAppId = 1;
     var startButton = document.getElementById('my_btn');
-
-    var random_id = Math.floor(Math.random() * 100000000000000) + 100;
+    
+    var random_id = Math.floor(Math.random() * 100000000000000) + 100;//id to verify that the application is installed
 
     checkCookie();
-
-
-
 
     function setCookie(cookie_name, cookie_value) {
         var d = new Date();
@@ -44,6 +40,7 @@ $(document).ready(function () {
         return "";
     }
 
+    //cookie för att se om klienten finns installerad. 
     function checkCookie() {
         var app_status = getCookie("installStatus");
         if (app_status == "Ok") {
@@ -53,7 +50,7 @@ $(document).ready(function () {
             }
     }
 
-
+    
     function setStatus() {
         try {
             window.location.assign("client2web:aliveId=" + random_id);
@@ -66,7 +63,6 @@ $(document).ready(function () {
     $('#my_btn').click(function () {
         setStatus();
     });
-
 
     startButton.onclick = function () {
         var runCode = setInterval(function () {
@@ -93,23 +89,17 @@ $(document).ready(function () {
             }
         }, 1000);
     }
-//Test
+
     $('#close-btn').click(function () {
         $('#myModal').modal('hide');
         redirectToApp();
     });
 
-//slut på test
     function showModal() {
         $('#myModal').modal({ show: true });
     }
 
-    //function close_and_redirect() {
-    //    $('#myModal').modal('hide');
-    //    redirectToApp();
-    //}
-
-    function redirectToApp() {
+     function redirectToApp() {
         window.location.href = "command.aspx"
     }
 

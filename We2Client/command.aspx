@@ -10,15 +10,14 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <input type="hidden" id="hiddenElement01" name="hiddenElement" runat="server" />
-        <input type="hidden" id="hiddenElement02" name="hiddenElement" runat="server" />
+        <input type="hidden" id="valueOfClickedDocument" name="hiddenElement" runat="server" />
+        <input type="hidden" id="valueOfNewDocumentName" name="hiddenElement" runat="server" />
         <div class="container">
             <div class="jumbotron top-text">
                 <a href="index.aspx">
                     <h1>Web2Client</h1>
                 </a>
             </div>
-
             <!-- Modal -->
             <div class="modal fade testet" id="createModal" role="dialog">
                 <div class="modal-dialog ">
@@ -80,7 +79,9 @@
                             <td><%# DataBinder.Eval(Container.DataItem,"docName") %></td>
                             <td>
                                 <asp:Button runat="server" ID="deleteBtn" CssClass="action-btn btn btn-info" Text="Ta Bort" OnClick="deleteBtn_Click" CommandArgument='<%# Eval("docName") %>' />
-                                <asp:Button runat="server" ID="Button2" CssClass="action-btn btn btn-info" Text="Hämta dokument" CommandArgument='<%# Eval("docName") %>' />
+                                <input type="button" id="download-document" class="action-btn btn btn-info" value="hämta dokument" />
+                                <%--<asp:HyperLink id="hyperlink" Text="Hämta dokument" runat="server" type="button"/>--%>
+                                <%--<asp:Button runat="server" ID="Button2" CssClass="action-btn btn btn-info" Text="Hämta dokument" OnClick="GetDocument_Click"/>--%>
                                 <input type="button" id="Button1" class="action-btn btn btn-info" value="Byt namn" />
                                 <asp:Button runat="server" ID="copyBtn" CssClass="action-btn btn btn-info" Text="Kopiera" OnClick="copyBtn_Click1" CommandArgument='<%# Eval("docName") %>' />
                             </td>
@@ -90,7 +91,7 @@
             </table>
             <asp:UpdatePanel runat="server">
                 <ContentTemplate>
-                    <asp:Button runat="server" ID="createBtn" CssClass="action-btn btn btn-info createBtn" OnClientClick="openCreateModal()" Text="Skapa" />
+                    <asp:Button runat="server" ID="createBtn" CssClass="action-btn btn btn-info createBtn" OnClientClick="openCreateModal()" Text="Skapa nytt dokument" />
                 </ContentTemplate>
             </asp:UpdatePanel>
             <div class="row">

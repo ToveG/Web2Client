@@ -20,46 +20,34 @@ namespace We2Client
      [System.Web.Script.Services.ScriptService]
     public class DocumentManagementService : System.Web.Services.WebService
     {
-
-
-        //[WebMethod]
-        //[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        //public DocumentArchiveFiles View()
-        //{
-          
-        //    var fileList = new List<DocumentArchiveFiles>();
-        //    var doc = Directory.GetFiles(@"C:\inetpub\wwwroot\DocumentArchive");
-        //    foreach(var d in doc)
-        //    {
-        //        var file = new DocumentArchiveFiles();
-        //        file.fileNamne = d;
-        //        fileList.Add(file);                
-        //    }
-
-        //    //    return new JavaScriptSerializer().Serialize(fileList);
-        //    return ;
-
-        //}
+        string path = @"C:\inetpub\wwwroot\DocumentArchive\";
+        string filePath;
 
         [WebMethod]
-        public string Paste()
+        public int downloadDocumentLen(string fileName)
         {
-            return "Paste document";
+            filePath = path + fileName;
+
+            FileStream objfilestream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+            int length = (int)objfilestream.Length;
+            objfilestream.Close();
+
+            return length;
         }
 
         [WebMethod]
-        public string Create()
+        public byte[] downloadDocument(string fileName)
         {
-            return "Create document";
-        }
+            filePath = path + fileName;
 
-        [WebMethod]
-        public string Delete()
-        {
-            return "Delete document";
-        }
+            FileStream objfilestream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+            int length = (int)objfilestream.Length;
+            Byte[] documentcontents = new Byte[length];
+            objfilestream.Read(documentcontents, 0, length);
+            objfilestream.Close();
 
-        
+            return documentcontents;
+        }
 
     }
     [Serializable]

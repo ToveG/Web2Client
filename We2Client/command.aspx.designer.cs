@@ -22,22 +22,22 @@ namespace We2Client {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// hiddenElement01 control.
+        /// valueOfClickedDocument control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hiddenElement01;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden valueOfClickedDocument;
         
         /// <summary>
-        /// hiddenElement02 control.
+        /// valueOfNewDocumentName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hiddenElement02;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden valueOfNewDocumentName;
         
         /// <summary>
         /// Word control.

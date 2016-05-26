@@ -12,18 +12,24 @@ namespace We2Client
 {
     public partial class command : System.Web.UI.Page
     {
+        string mainPath = @"C:\inetpub\wwwroot\DocumentArchive";
+
+        public void updateList()
+        {
+            var documentList = getDocument();
+            bindDocumentData(documentList);
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                var documentList = getDocument();
-                bindDocumentData(documentList);
+                updateList();
             }
         }
 
         public List<document> getDocument()
         {
-            var doc = Directory.GetFiles(@"C:\inetpub\wwwroot\DocumentArchive");
+            var doc = Directory.GetFiles(mainPath); 
 
             var documentList = new List<document>();
             int id_number = 0;
@@ -67,7 +73,7 @@ namespace We2Client
         {
             Button button = (sender as Button);
             string commandArgument = button.CommandArgument;
-            string sourceDir = @"C:\inetpub\wwwroot\DocumentArchive";
+            string sourceDir = mainPath;
             string[] myDocList = Directory.GetFiles(sourceDir, commandArgument);
 
             foreach (string d in myDocList)
@@ -81,8 +87,7 @@ namespace We2Client
                     Console.WriteLine("An error occurred: '{0}'", exe);
                 }
             }
-            var documentList = getDocument();
-            bindDocumentData(documentList);
+            updateList();
         }
           
         public class document
@@ -137,7 +142,7 @@ namespace We2Client
             string newFileName = "";
             string fileName = "";
             string sourcePath = @"C:\inetpub\wwwroot\DocumentArchive\Mallar";
-            string targetPath = @"C:\inetpub\wwwroot\DocumentArchive\";
+            string targetPath = mainPath;
 
             if (Word.Checked)
             {
@@ -167,8 +172,7 @@ namespace We2Client
                 File.Copy(sourceFile, destFile);
 
             }
-            var documentList = getDocument();
-            bindDocumentData(documentList);
+            updateList();
         }
 
         protected void copyBtn_Click1(object sender, EventArgs e)
@@ -176,23 +180,19 @@ namespace We2Client
             Button button = (sender as Button);
             string commandArgument = button.CommandArgument;
 
-            string filePath = @"C:\inetpub\wwwroot\DocumentArchive";
+            string filePath = mainPath;
             string sourceFile = Path.Combine(filePath, commandArgument);
             string newName = NextAvailableFilename(sourceFile);
             File.Copy(sourceFile, newName);
-    
-            var documentList = getDocument();
-            bindDocumentData(documentList);
+            updateList();
         }
-
 
         protected void RenameFile_Click(object sender, EventArgs e)
         {
-            string existingFileName = hiddenElement01.Value;
-            string userInput = hiddenElement02.Value;
+            string existingFileName = valueOfClickedDocument.Value;
+            string userInput = valueOfNewDocumentName.Value;
             string extentionType = getExtentionType(existingFileName);
-            string filePath = @"C:\inetpub\wwwroot\DocumentArchive";
-
+            string filePath = mainPath; 
             string fileName = userInput + extentionType;
             string sourceFile = Path.Combine(filePath, existingFileName);
             
@@ -200,8 +200,7 @@ namespace We2Client
             string newName = NextAvailableFilename(newDocumentName);
             File.Move(sourceFile, newName);
 
-            var documentList = getDocument();
-            bindDocumentData(documentList);
+            updateList();
         }
     }
 }

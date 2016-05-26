@@ -8,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="Content\bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="myStyle.css" />
 </head>
-
 <body>
     <form id="form1" runat="server">
         <div class="container">
@@ -16,7 +15,6 @@
                 <h2>Välkommen till</h2>
                 <h1>Web2Client</h1>
             </div>
-
             <!-- Modal -->
             <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog">
@@ -35,7 +33,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="modal fade" id="startModal" role="dialog">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -53,8 +50,6 @@
                     </div>
                 </div>
             </div>
-
-
             <div class="row text">
                 <div class="col-md-6">
                     <h3>För att kunna köra programmet behöver du först installera det. </h3>
@@ -70,9 +65,7 @@
             </div>
         </div>
     </form>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-
     <!-- Latest compiled JavaScript -->
     <script src="scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="myScript.js"></script>
