@@ -34,8 +34,6 @@ namespace We2Client
             command.Connection.Close();
         }
 
-
-
         [WebMethod]
         public bool getValue(string id)
         {
@@ -58,7 +56,6 @@ namespace We2Client
             if (string.IsNullOrEmpty(retur_value))
             {
                 return false;
-               
             }
             else { return true; 
             }
