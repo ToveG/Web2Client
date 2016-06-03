@@ -1,4 +1,7 @@
-﻿
+﻿//
+//scripts that will be run on command.aspx
+//
+
 function openCreateModal() {
     $('#createModal').modal({ show: true });
 }

@@ -8,12 +8,12 @@
 
     checkCookie();
 
+    // create cookie.
     function setCookie(cookie_name, cookie_value) {
         var d = new Date();
         d.setTime(d.getTime() + ( 365 * 24 * 60 * 60 * 1000));
         var expires = "expires=" + d.toUTCString();
         var statusCookie= document.cookie = cookie_name + "=" + cookie_value + "; " + expires;
-        console.log(statusCookie);
     }
     
     $('#modal-close-btn-2').click(function () {
@@ -53,7 +53,7 @@
     
     function setStatus() {
         try {
-            window.location.assign("client2web:aliveId=" + random_id);
+            window.location.assign("client2web:aliveId=" + random_id);  //call to protocol client2web: with parameter aliveId= random_id.
         }
         catch (err) {
             showModal()
@@ -64,6 +64,8 @@
         setStatus();
     });
 
+    //when user click on startbutton the script will check for applicationId in db, via webservice. 
+    //the code will be run repetitively. 
     startButton.onclick = function () {
         var runCode = setInterval(function () {
             if (tryGetAppId <= 1) {

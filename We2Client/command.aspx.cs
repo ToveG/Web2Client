@@ -42,6 +42,7 @@ namespace We2Client
             return documentList;
         }
 
+        //this is the extentions of libreOffice documents
         public string getExtentionType(string document)
         {
             string doc = document;
@@ -69,6 +70,7 @@ namespace We2Client
             rprDocTable.DataBind();
         }
 
+        //delete document
         protected void deleteBtn_Click(object sender, EventArgs e)
         {
             Button button = (sender as Button);

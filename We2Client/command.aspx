@@ -18,7 +18,7 @@
                     <h1>Web2Client</h1>
                 </a>
             </div>
-            <!-- Modal -->
+            <!-- Create new document Modal -->
             <div class="modal fade testet" id="createModal" role="dialog">
                 <div class="modal-dialog ">
                     <div class="modal-content">
@@ -40,7 +40,8 @@
                     </div>
                 </div>
             </div>
-            <!-- Modal -->
+            <!-- End Modal -->
+            <!-- Change FileName Modal -->
             <div class="modal fade testet" id="renameModal" role="dialog">
                 <div class="modal-dialog ">
                     <div class="modal-content">
@@ -59,6 +60,7 @@
                     </div>
                 </div>
             </div>
+            <!-- End Modal -->
             <asp:ScriptManager runat="server" ID="sm">
             </asp:ScriptManager>
             <table id="myTable" class="table">
@@ -80,8 +82,6 @@
                             <td>
                                 <asp:Button runat="server" ID="deleteBtn" CssClass="action-btn btn btn-info" Text="Ta Bort" OnClick="deleteBtn_Click" CommandArgument='<%# Eval("docName") %>' />
                                 <input type="button" id="download-document" class="action-btn btn btn-info" value="hämta dokument" />
-                                <%--<asp:HyperLink id="hyperlink" Text="Hämta dokument" runat="server" type="button"/>--%>
-                                <%--<asp:Button runat="server" ID="Button2" CssClass="action-btn btn btn-info" Text="Hämta dokument" OnClick="GetDocument_Click"/>--%>
                                 <input type="button" id="Button1" class="action-btn btn btn-info" value="Byt namn" />
                                 <asp:Button runat="server" ID="copyBtn" CssClass="action-btn btn btn-info" Text="Kopiera" OnClick="copyBtn_Click1" CommandArgument='<%# Eval("docName") %>' />
                             </td>

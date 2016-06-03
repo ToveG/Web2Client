@@ -23,6 +23,8 @@ namespace We2Client
         string path = @"C:\inetpub\wwwroot\DocumentArchive\";
         string filePath;
 
+        //downloads file from path.
+
         [WebMethod]
         public int downloadDocumentLen(string fileName)
         {
@@ -48,13 +50,5 @@ namespace We2Client
 
             return documentcontents;
         }
-
-    }
-    [Serializable]
-    public class DocumentArchiveFiles
-    {
-        public int id { get; set; }
-        public string fileNamne { get; set; }
-
     }
 }
